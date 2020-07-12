@@ -31,7 +31,7 @@ public class CategoryResource {
 	@GetMapping(value = "/{id}")
 	/*Notation vai reconhecer o caminho /1  e vai casar com o ID  "http://localhost:8080/categories" */
 	public ResponseEntity<Category> findById(@PathVariable Long id){
-		Category cat = categoryRepository.findById(id);
+		Category cat = categoryRepository.findById(id).get();
 		return ResponseEntity.ok().body(cat);
 	}  
 

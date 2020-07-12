@@ -31,7 +31,7 @@ public class ProductResource {
 	@GetMapping(value = "/{id}")
 	/*Notation vai reconhecer o caminho /1  e vai casar com o ID  "http://localhost:8080/categories" */
 	public ResponseEntity<Product> findById(@PathVariable Long id){
-		Product cat = categoryRepository.findById(id);
+		Product cat = categoryRepository.findById(id).get();
 		return ResponseEntity.ok().body(cat);
 	}  
 }
